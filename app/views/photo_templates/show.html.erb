@@ -69,3 +69,16 @@
   </table>
 
 <h3>Add a new comment</h3>
+
+<form action="/insert_comment">
+  <label for="browser_photo_id">Photo ID</label>
+  <input id="browser_photo_id" type="text" name="input_photo_id" value="<%= @the_photo.id %>">
+
+  <label for="browser_author_id">Author ID</label>
+  <input id="browser_author_id" name="input_author_id">
+
+  <label for="browser_comment">Comment</label>
+  <textarea id="browser_comment" name="query_comment"></textarea>
+
+  <button>Add comment</button>
+</form>

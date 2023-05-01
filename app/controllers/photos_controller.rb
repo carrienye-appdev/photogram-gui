@@ -47,4 +47,16 @@ class PhotosController < ApplicationController
     next_url = "/photos/" + the_photo.id.to_s
     redirect_to(next_url)
   end
+
+  def comment
+    input_id = params.fetch("input_photo_id")
+    input_author = params.fetch("input_author_id")
+    input_comment = params.fetch("query_comment")
+    a_new_comment = Comment.new
+    a_new_comment.author_id = input_author
+    a_new_comment.body = input_comment 
+    a_new_comment.save
+    #render({ :template => "photo_templates/comment.html.erb"})
+    redirect_to("/photos/" + input_id.to_s)
+  end
 end
